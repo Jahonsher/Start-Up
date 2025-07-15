@@ -109,6 +109,7 @@ const App = () => {
       </div>
         <p className="text-white">
           {content[language].info} 
+          <h1>Hello</h1>
         </p>
         
     </div>

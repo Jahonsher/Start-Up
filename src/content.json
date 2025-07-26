@@ -1,0 +1,20 @@
+{
+  "uz": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "services": "Xizmatlar",
+    "contact": "Aloqa",
+    "login": "Kirish",
+    "info": "Biz bilan sayohatingizni mukammal rejalashtiring!",
+    "welcome": "Unutilmas sarguzashtlarga boradigan joyingiz - AqsoTourga xush kelibsiz! Turli yo'nalishlarni o'rganing, muammosiz rejalashtiring va umr bo'yi sayohatga chiqing. Tanlangan turar joylarni kashf eting, hamfikr sayohatchilar bilan bog'laning va abadiy xotiralar yarating. Sizning keyingi sarguzashtingiz AqsoTour bilan kutmoqda!"
+  },
+  "en": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "login": "Login",
+    "info": "Plan Your Perfect Trip with",
+    "welcome": "Welcome to AqsoTour, your go-to destination for unforgettable adventures! Explore diverse destinations, plan seamlessly, and embark on a journey of a lifetime. Discover handpicked accommodations, connect with like-minded travelers, and create lasting memories. Your next adventure awaits with AqsoTour!"
+  }
+}

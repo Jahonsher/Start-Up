@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
-import { createRoot } from 'react-dom/client';
+import React, { useState, useEffect, useRef } from 'react';
 import content from './content.json';
 
 const App = () => {
   const [language, setLanguage] = useState('uz');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Handle clicks outside the mobile menu to close it
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className="min-h-screen bg-[rgb(21,21,73)]">
@@ -16,7 +30,7 @@ const App = () => {
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-3xl font-bold text-red-600">AqsoTour</h1>
           <div className="flex items-center space-x-4">
-            {/* Kompyuter versiyada navbar linklari va login knopkasi */}
+            {/* Desktop navbar links and login button */}
             <div className="flex items-center space-x-6">
               <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">
                 {content[language].home}
@@ -37,7 +51,7 @@ const App = () => {
                 {content[language].login}
               </a>
             </div>
-            {/* Kompyuter versiyada til o'zgartirish */}
+            {/* Desktop language selector */}
             <select
               className="bg-transparent text-white border border-gray-400 rounded p-1 focus:outline-none hidden md:block"
               value={language}
@@ -46,7 +60,7 @@ const App = () => {
               <option value="uz" className="text-black">O'zbek</option>
               <option value="en" className="text-black">English</option>
             </select>
-            {/* Mobil versiyada menu knopkasi */}
+            {/* Mobile menu button */}
             <button
               className="md:hidden text-white focus:outline-none"
               onClick={toggleMenu}
@@ -68,10 +82,11 @@ const App = () => {
             </button>
           </div>
         </div>
-        {/* Mobil menyuda linklar va til o'zgartirish */}
+        {/* Mobile menu links and language selector */}
         {isMenuOpen && (
           <div
-            className="md:hidden fixed top-0 right-0 h-screen w-64 bg-black bg-opacity-60 backdrop-blur-md p-4 transform transition-transform ease-in-out duration-300"
+            ref={menuRef}
+            className="md:hidden fixed top-0 right-0 h-screen w-64 bg-black bg-opacity-70 backdrop-blur-md p-4 transform transition-transform ease-in-out duration-300"
             style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)' }}
           >
             <button
@@ -106,7 +121,7 @@ const App = () => {
               <a href="#" className="text-gray-300 hover:text-white">
                 {content[language].contact}
               </a>
-              {/* Mobil menyuda til o'zgartirish */}
+              {/* Mobile language selector */}
               <select
                 className="bg-transparent text-white border border-gray-400 rounded p-1 focus:outline-none"
                 value={language}

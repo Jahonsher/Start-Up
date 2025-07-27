@@ -16,11 +16,20 @@ const App = () => {
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-3xl font-bold text-red-600">AqsoTour</h1>
           <div className="flex items-center space-x-4">
+            {/* Kompyuter versiyada navbar linklari va login knopkasi */}
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">{content[language].home}</a>
-              <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">{content[language].about}</a>
-              <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">{content[language].services}</a>
-              <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">{content[language].contact}</a>
+              <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">
+                {content[language].home}
+              </a>
+              <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">
+                {content[language].about}
+              </a>
+              <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">
+                {content[language].services}
+              </a>
+              <a href="#" className="text-gray-300 text-xl hover:text-white hidden md:block">
+                {content[language].contact}
+              </a>
               <a
                 href="#"
                 className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
@@ -28,6 +37,16 @@ const App = () => {
                 {content[language].login}
               </a>
             </div>
+            {/* Kompyuter versiyada til o'zgartirish */}
+            <select
+              className="bg-transparent text-white border border-gray-400 rounded p-1 focus:outline-none hidden md:block"
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+            >
+              <option value="uz" className="text-black">O'zbek</option>
+              <option value="en" className="text-black">English</option>
+            </select>
+            {/* Mobil versiyada menu knopkasi */}
             <button
               className="md:hidden text-white focus:outline-none"
               onClick={toggleMenu}
@@ -47,19 +66,14 @@ const App = () => {
                 />
               </svg>
             </button>
-            <select
-                className="bg-transparent text-white border border-gray-400 rounded p-1 focus:outline-none"
-                value={language}
-                onChange={(e) => setLanguage(e.target.value)}
-              >
-                <option value="uz" className="text-black">O'zbek</option>
-                <option value="en" className="text-black">English</option>
-              </select>
           </div>
         </div>
+        {/* Mobil menyuda linklar va til o'zgartirish */}
         {isMenuOpen && (
-          <div className="md:hidden fixed top-0 right-0 h-screen w-64 bg-black bg-opacity-60 backdrop-blur-md p-4 transform transition-transform ease-in-out duration-300"
-            style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)' }}>
+          <div
+            className="md:hidden fixed top-0 right-0 h-screen w-64 bg-black bg-opacity-60 backdrop-blur-md p-4 transform transition-transform ease-in-out duration-300"
+            style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)' }}
+          >
             <button
               className="text-white focus:outline-none absolute top-4 right-4"
               onClick={toggleMenu}
@@ -80,10 +94,19 @@ const App = () => {
               </svg>
             </button>
             <div className="flex flex-col space-y-4 mt-12">
-              <a href="#" className="text-gray-300 hover:text-white">{content[language].home}</a>
-              <a href="#" className="text-gray-300 hover:text-white">{content[language].about}</a>
-              <a href="#" className="text-gray-300 hover:text-white">{content[language].services}</a>
-              <a href="#" className="text-gray-300 hover:text-white">{content[language].contact}</a>
+              <a href="#" className="text-gray-300 hover:text-white">
+                {content[language].home}
+              </a>
+              <a href="#" className="text-gray-300 hover:text-white">
+                {content[language].about}
+              </a>
+              <a href="#" className="text-gray-300 hover:text-white">
+                {content[language].services}
+              </a>
+              <a href="#" className="text-gray-300 hover:text-white">
+                {content[language].contact}
+              </a>
+              {/* Mobil menyuda til o'zgartirish */}
               <select
                 className="bg-transparent text-white border border-gray-400 rounded p-1 focus:outline-none"
                 value={language}
@@ -101,12 +124,9 @@ const App = () => {
           <div className="w-full md:w-3/5 p-4">
             <h1 className="text-5xl font-bold text-white">{content[language].info}</h1>
             <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour</h1>
-            <p className="text-white text-lg mt-14">
-              {content[language].welcome}
-            </p>
+            <p className="text-white text-lg mt-14">{content[language].welcome}</p>
           </div>
-          <div className="w-full md:w-2/5 p-4 bg-gray-300 rounded-lg mt-8 ">
-          </div>
+          <div className="w-full md:w-2/5 p-4 bg-gray-300 rounded-lg mt-8"></div>
         </div>
       </div>
     </div>

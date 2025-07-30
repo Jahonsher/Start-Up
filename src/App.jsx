@@ -138,7 +138,7 @@ const App = () => {
         <div className="flex flex-col pt-20 md:flex-row">
           <div className="w-full md:w-3/5 p-4">
             <h1 className="text-5xl font-bold text-white">{content[language].info}</h1>
-            <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour</h1>
+            <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour Hello</h1>
             <p className="text-white text-lg mt-14">{content[language].welcome}</p>
           </div>
           <div className="w-full md:w-2/5 p-4 bg-gray-300 rounded-lg mt-8"></div>

@@ -6,7 +6,15 @@
     "contact": "Aloqa",
     "login": "Kirish",
     "info": "Biz bilan sayohatingizni mukammal rejalashtiring!",
-    "welcome": "Unutilmas sarguzashtlarga boradigan joyingiz - AqsoTourga xush kelibsiz! Turli yo'nalishlarni o'rganing, muammosiz rejalashtiring va umr bo'yi sayohatga chiqing. Tanlangan turar joylarni kashf eting, hamfikr sayohatchilar bilan bog'laning va abadiy xotiralar yarating. Sizning keyingi sarguzashtingiz AqsoTour bilan kutmoqda!"
+    "welcome": "Unutilmas sarguzashtlarga boradigan joyingiz - AqsoTourga xush kelibsiz! Turli yo'nalishlarni o'rganing, muammosiz rejalashtiring va umr bo'yi sayohatga chiqing. Tanlangan turar joylarni kashf eting, hamfikr sayohatchilar bilan bog'laning va abadiy xotiralar yarating. Sizning keyingi sarguzashtingiz AqsoTour bilan kutmoqda!",
+    "Our": "Bizning eng yaxshi xizmatlarimiz",
+    "travel": "Sayohatingizni kuchaytirish: tajribangizni oshirish uchun moslashtirilgan tengsiz xizmatlar",
+    "Adventure": "Sarguzashtli sayohatlar",
+    "explore": "Bizning sarguzashtli sayohatlarimiz bilan hayajonli joylarni o'rganing.",
+    "Plan": "Sayohatni rejalashtirish",
+    "handle": "Keling, tafsilotlarni hal qilaylik! Biz rejalashtiramiz, siz orzu qilgan dam olishni yoqtirasiz.",
+    "high": "Yuqori sifatli turar joy",
+    "Experience": "Bizning sinchkovlik bilan tanlangan turar joyimiz bilan qulaylik va hashamatni his eting."
   },
   "en": {
     "home": "Home",
@@ -15,6 +23,14 @@
     "contact": "Contact",
     "login": "Login",
     "info": "Plan Your Perfect Trip with",
-    "welcome": "Welcome to AqsoTour, your go-to destination for unforgettable adventures! Explore diverse destinations, plan seamlessly, and embark on a journey of a lifetime. Discover handpicked accommodations, connect with like-minded travelers, and create lasting memories. Your next adventure awaits with AqsoTour!"
+    "welcome": "Welcome to AqsoTour, your go-to destination for unforgettable adventures! Explore diverse destinations, plan seamlessly, and embark on a journey of a lifetime. Discover handpicked accommodations, connect with like-minded travelers, and create lasting memories. Your next adventure awaits with AqsoTour!",
+    "Our": "Our Best Services",
+    "travel": "Empowering Your Journey: Unrivaled Services Tailored to Elevate Your Experience.",
+    "Adventure": "Adventure Tours",
+    "explore": "Explore thrilling destinations with our guided adventure tours.",
+    "Plan": "Travel Planning",
+    "handle": "Let us handle the details! We plan, you enjoy your dream vacation.",
+    "high": "High-Quality Accommodations",
+    "Experience": "Experience comfort and luxury with our carefully selected accommodations."
   }
 }

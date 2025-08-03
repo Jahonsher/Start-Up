@@ -28,7 +28,7 @@ const App = () => {
     <div className="min-h-screen bg-[rgb(21,21,73)]">
       <nav className="bg-black bg-opacity-5 backdrop-blur-md fixed w-full top-0 z-10 p-8 text-white">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-red-600">AqsoTour</h1>
+          <h1 className="text-4xl font-bold text-red-600">AqsoTour</h1>
           <div className="flex items-center space-x-4">
             {/* Desktop navbar links and login button */}
             <div className="flex items-center space-x-6">
@@ -138,14 +138,62 @@ const App = () => {
         <div className="flex flex-col pt-20 md:flex-row">
           <div className="w-full md:w-3/5 p-4">
             <h1 className="text-5xl font-bold text-white">{content[language].info}</h1>
-            <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour Hello</h1>
+            <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour</h1>
             <p className="text-white text-lg mt-14">{content[language].welcome}</p>
           </div>
           <div className="w-full md:w-2/5 p-4 bg-gray-300 rounded-lg mt-8"></div>
         </div>
       </div>
 
+      <div className="container mt-24 mx-auto px-4 py-8">
+        {/* Services Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {/* Our Best Services Card */}
+          <div className="p-6 rounded-lg shadow-md w-full ">
+            <h3 className="text-4xl font-semibold mb-2 text-red-600">{content[language].Our}</h3>
+            <p className="text-xl pt-4 text-white">"{content[language].travel}"</p>
+          </div>
 
+          {/* Adventure Tours Card */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17l6-6m0 0l-6-6m6 6H3"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{content[language].Adventure}</h3>
+            <p className="text-gray-600">{content[language].explore}</p>
+          </div>
+
+          {/* Travel Planning Card */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="mb-4">
+              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{content[language].Plan}</h3>
+            <p className="text-gray-600">{content[language].handle}</p>
+          </div>
+
+          {/* High-Quality Accommodations Card */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="mb-4 ">
+              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7m-7-7v18"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2 md:w-4/5">{content[language].high}</h3>
+            <p className="text-gray-600">{content[language].Experience}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

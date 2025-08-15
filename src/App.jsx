@@ -155,43 +155,44 @@ const App = () => {
           </div>
 
           {/* Adventure Tours Card */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="mb-4">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17l6-6m0 0l-6-6m6 6H3"></path>
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-semibold mb-2">{content[language].Adventure}</h3>
-            <p className="text-gray-600">{content[language].explore}</p>
-          </div>
+<div className="bg-white p-6 rounded-lg shadow-md">
+  <div className="mb-4">
+    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+      <svg stroke="currentColor" fill="#ffffff" stroke-width="0" viewBox="0 0 512 512" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg">
+        <path d="M80 352c0 19.198 13.864 24.531 26.667 36.271v38.396c0 11.729 9.599 21.334 21.333 21.334h21.333c11.734 0 21.334-9.604 21.334-21.334v-21.333h170.666v21.333c0 11.729 9.604 21.334 21.334 21.334H384c11.729 0 21.333-9.604 21.333-21.334v-38.396C418.136 376.531 432 370.136 432 352V148.334C432 73.667 349.864 64 256 64S80 73.667 80 148.334V352zm80 15.989c-18.136 0-32-13.864-32-32 0-18.135 13.864-32 32-32s32 13.865 32 32c0 18.136-13.864 32-32 32zm192 0c-18.136 0-32-13.864-32-32 0-18.135 13.864-32 32-32s32 13.865 32 32c0 18.136-13.864 32-32 32zm32-122.656H128V138.667h256v106.666z"></path>
+      </svg>
+    </div>
+  </div>
+  <h3 className="text-xl font-semibold mb-2">{content[language].Adventure}</h3>
+  <p className="text-gray-600">{content[language].explore}</p>
+</div>
 
-          {/* Travel Planning Card */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="mb-4">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-semibold mb-2">{content[language].Plan}</h3>
-            <p className="text-gray-600">{content[language].handle}</p>
-          </div>
+{/* Travel Planning Card */}
+<div className="bg-white p-6 rounded-lg shadow-md">
+  <div className="mb-4">
+    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+      <svg stroke="currentColor" fill="#ffffff" stroke-width="0" viewBox="0 0 640 512" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg">
+        <path d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z"></path>
+      </svg>
+    </div>
+  </div>
+  <h3 className="text-xl font-semibold mb-2">{content[language].Plan}</h3>
+  <p className="text-gray-600">{content[language].handle}</p>
+</div>
 
-          {/* High-Quality Accommodations Card */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="mb-4 ">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7m-7-7v18"></path>
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 md:w-4/5">{content[language].high}</h3>
-            <p className="text-gray-600">{content[language].Experience}</p>
-          </div>
+{/* High-Quality Accommodations Card */}
+<div className="bg-white p-6 rounded-lg shadow-md">
+  <div className="mb-4">
+    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+      <svg stroke="currentColor" fill="#ffffff" stroke-width="0" viewBox="0 0 24 24" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"></path>
+      </svg>
+    </div>
+  </div>
+  <h3 className="text-xl font-semibold mb-2 md:w-4/5">{content[language].high}</h3>
+  <p className="text-gray-600">{content[language].Experience}</p>
+</div>
         </div>
       </div>
     </div>

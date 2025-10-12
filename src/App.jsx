@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import content from './content.json';
+// import Card from './asistes/Card';
 import Footer from './asistes/Footer/Footer';
+
 
 const App = () => {
   const [language, setLanguage] = useState('uz');
@@ -146,7 +148,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="container mt-24 mx-auto px-4 py-8">
+      <div className="container mt-24 mb-16 mx-auto px-4 py-8">
         {/* Services Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Our Best Services Card */}
@@ -196,8 +198,16 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      {/* <Card /> */}
       {/* Footer */}
-      <Footer  />
+      <div>
+        <section className="text-center">
+          <h2 className='text-red-600 text-4xl mb-2'>Our Gallery</h2>
+          <p className='text-white text-xl'>"Unveil travel wonders in our gallery, a snapshot of TripsTravel's adventures."</p>
+        </section>
+      </div>
+      <Footer />
     </div>
   );
 };

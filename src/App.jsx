@@ -3,6 +3,24 @@ import content from './content.json';
 // import Card from './asistes/Card';
 import Footer from './asistes/Footer/Footer';
 
+const FAQItem = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <div className="border rounded-lg mb-2 shadow-md">
+      <button
+        className="w-full text-left p-4 focus:outline-none"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="font-semibold">{question}</span>
+        <span className="float-right">{isOpen ? '−' : '+'}</span>
+      </button>
+      {isOpen && (
+        <div className="p-4 text-gray-600">{answer}</div>
+      )}
+    </div>
+  );
+};
 
 const App = () => {
   const [language, setLanguage] = useState('uz');
@@ -13,7 +31,6 @@ const App = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle clicks outside the mobile menu to close it
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
@@ -33,7 +50,6 @@ const App = () => {
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-4xl font-bold text-red-600">AqsoTour</h1>
           <div className="flex items-center space-x-4">
-            {/* Desktop navbar links and login button */}
             <div className="flex items-center space-x-6">
               <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
                 {content[language].home}
@@ -54,7 +70,6 @@ const App = () => {
                 {content[language].login}
               </a>
             </div>
-            {/* Desktop language selector */}
             <select
               className="bg-transparent text-white border border-gray-400 rounded p-1 focus:outline-none hidden md:block"
               value={language}
@@ -63,7 +78,6 @@ const App = () => {
               <option value="uz" className="text-black">O'zbek</option>
               <option value="en" className="text-black">English</option>
             </select>
-            {/* Mobile menu button */}
             <button
               className="md:hidden text-white focus:outline-none"
               onClick={toggleMenu}
@@ -85,7 +99,6 @@ const App = () => {
             </button>
           </div>
         </div>
-        {/* Mobile menu links and language selector */}
         {isMenuOpen && (
           <div
             ref={menuRef}
@@ -124,7 +137,6 @@ const App = () => {
               <a href="#" className="text-gray-300 hover:text-white">
                 {content[language].contact}
               </a>
-              {/* Mobile language selector */}
               <select
                 className="bg-transparent text-white border border-gray-400 rounded p-1 focus:outline-none"
                 value={language}
@@ -149,15 +161,11 @@ const App = () => {
       </div>
 
       <div className="container mt-24 mb-16 mx-auto px-4 py-8">
-        {/* Services Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {/* Our Best Services Card */}
           <div className="p-6 rounded-lg shadow-md w-full ">
             <h3 className="text-4xl font-semibold mb-2 text-red-600">{content[language].Our}</h3>
             <p className="text-xl pt-4 text-white">"{content[language].travel}"</p>
           </div>
-
-          {/* Adventure Tours Card */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="mb-4">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
@@ -169,8 +177,6 @@ const App = () => {
             <h3 className="text-xl font-semibold mb-2">{content[language].Adventure}</h3>
             <p className="text-gray-600">{content[language].explore}</p>
           </div>
-
-          {/* Travel Planning Card */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="mb-4">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
@@ -182,8 +188,6 @@ const App = () => {
             <h3 className="text-xl font-semibold mb-2">{content[language].Plan}</h3>
             <p className="text-gray-600">{content[language].handle}</p>
           </div>
-
-          {/* High-Quality Accommodations Card */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="mb-4">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
@@ -199,14 +203,51 @@ const App = () => {
         </div>
       </div>
 
-      {/* <Card /> */}
-      {/* Footer */}
-      <div>
-        <section className="text-center">
-          <h2 className='text-red-600 text-4xl mb-2'>Our Gallery</h2>
-          <p className='text-white text-xl'>"Unveil travel wonders in our gallery, a snapshot of TripsTravel's adventures."</p>
-        </section>
+      <section className='mb-8'>
+        <div className="text-center">
+          <h2 className='text-red-600 text-4xl mb-2'>{content[language].Gallery}</h2>
+          <p className='text-white text-xl'>"{content[language].GalleryInfo}"</p>
+        </div>
+      </section>
+
+      <section>
+        <div className='text-center'>
+          <h2 className='text-4xl mb-2 text-red-600'>{content[language].Reviews}</h2>
+          <p className='text-white md:text-xl max-w-[500px] mx-auto'>"{content[language].ReviewsInfo}"</p>
+        </div>
+      </section>
+
+      <div className="bg-white mx-auto p-4 min-h-screen">
+        <div className="md:flex">
+          <div className="md:w-1/2 pr-4 mb-4 md:mb-0">
+            <img src="https://trips-travel.vercel.app/assets/experience-iAr2OqVB.png" alt="Travel Image" className="w-full h-auto rounded-lg object-cover" />
+          </div>
+          <div className="md:w-1/2 pl-4">
+            <h1 className="text-2xl font-bold text-red-600 mb-10">Frequently Asked Question.</h1>
+            <FAQItem
+              question={content[language].Book}
+              answer={content[language].BookAsk}
+            /><br />
+            <FAQItem
+              question={content[language].Experiences}
+              answer={content[language].ExperiencesAsk}
+            /><br />
+            <FAQItem
+              question={content[language].Suitable}
+              answer={content[language].SuitableAsk}
+            /><br />
+            <FAQItem
+              question={content[language].Customize}
+              answer={content[language].CustomizeAsk}
+            /><br />
+            <FAQItem
+              question={content[language].Safety}
+              answer={content[language].SafetyAsk}
+            />
+          </div>
+        </div>
       </div>
+
       <Footer />
     </div>
   );

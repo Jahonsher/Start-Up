@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import content from './content.json';
 // import Card from './asistes/Card';
-import Footer from './asistes/Footer/Footer';
+// import Footer from './asistes/Footer/Footer';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -223,7 +223,7 @@ const App = () => {
             <img src="https://trips-travel.vercel.app/assets/experience-iAr2OqVB.png" alt="Travel Image" className="w-full h-auto rounded-lg object-cover" />
           </div>
           <div className="md:w-1/2 pl-4">
-            <h1 className="text-2xl font-bold text-red-600 mb-10">Frequently Asked Question.</h1>
+            <h1 className="text-2xl font-bold text-red-600 mb-10">{content[language].Frequently}</h1>
             <FAQItem
               question={content[language].Book}
               answer={content[language].BookAsk}
@@ -248,7 +248,7 @@ const App = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

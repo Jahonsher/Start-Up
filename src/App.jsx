@@ -172,8 +172,7 @@ const App = () => {
           
         </div>
       </section>
-      <br id="Services" /><br />
-      <br />
+      <br id="Services" />
 
       <div className="container mb-16 mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

@@ -4,6 +4,7 @@ import { Facebook, Instagram , Send, MapPin, Phone, Mail, Youtube } from "lucide
 // import Card from './asistes/Card';
 // import Footer from './asistes/Footer/Footer';
 import Galery from './asistes/Galery/Galery';
+import AqsoImage from '../public/Aqso.png'
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -158,7 +159,10 @@ const App = () => {
             <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour</h1>
             <p className="text-white text-lg mt-14">{content[language].Welcome}</p>
           </div>
-          <img className="w-full md:w-1/5 p-4  mx-auto  rounded-lg mt-8" src="../public/Aqso.png" alt="Rasim bor edi!" />
+          <img 
+            className="w-full md:w-1/5 p-4  mx-auto  rounded-lg mt-8" 
+            src={AqsoImage} 
+            alt="Rasim bor edi!" />
           
         </div>
       </section>

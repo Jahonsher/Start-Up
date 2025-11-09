@@ -31,7 +31,8 @@
     "Introdaction": "Aqso Tour – sizning orzudagi sayohatlaringizni amalga oshirish uchun ishonchli hamkoringiz. Eng yaxshi yo‘nalishlar, qulay narxlar va unutilmas tajribalar sizni kutmoqda!",
     "Quick": "Tezkor havola",
     "Contactus": "Biz bilan bog'laning",
-    "Reserved": "Aqso Tour. Barcha huquqlar himoyalangan."
+    "Reserved": "Aqso Tour. Barcha huquqlar himoyalangan.",
+    "Question": "Savollar"
   },
   "en": {
     "Home": "Home",
@@ -65,6 +66,7 @@
     "Introdaction": "Aqso Tour is your reliable partner for making your dream trips come true. The best destinations, affordable prices, and unforgettable experiences await you!",
     "Quick": "Quick link",
     "Contactus": "Contact us",
-    "Reserved": "Aqso Tour. All rights reserved."  
+    "Reserved": "Aqso Tour. All rights reserved.",
+    "Question": "Questions" 
   }
 }

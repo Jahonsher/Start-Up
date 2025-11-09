@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import content from './content.json';
-import { Facebook, Instagram , Send, MapPin, Phone, Mail, Youtube } from "lucide-react";
+import { Instagram , Send, MapPin, Phone, Mail, Youtube } from "lucide-react";
 // import Card from './asistes/Card';
 // import Footer from './asistes/Footer/Footer';
 import Galery from './asistes/Galery/Galery';
@@ -137,6 +137,12 @@ const App = () => {
               <a href="#Services" className="text-gray-300 hover:text-white">
                 {content[language].Services}
               </a>
+              <a href="#Galery" className="text-gray-300 hover:text-white">
+                Galery
+              </a>
+              <a href="#Question" className="text-gray-300 hover:text-white">
+                {content[language].Question}
+              </a>
               <a href="#Contact" className="text-gray-300 hover:text-white">
                 {content[language].Contact}
               </a>
@@ -151,7 +157,7 @@ const App = () => {
             </div>
           </div>
         )}
-      </nav>
+      </nav><br />
       <section id="Home" className="container mx-auto md:flex p-4">
         <div id="About" className="md:flex flex-col pt-20 md:flex-row">
           <div className="w-full md:w-3/5 p-4">
@@ -166,11 +172,13 @@ const App = () => {
           
         </div>
       </section>
+      <br id="Services" /><br />
+      <br />
 
-      <div id="Services" className="container mb-16 mx-auto px-4 py-8">
+      <div className="container mb-16 mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="p-6 rounded-lg shadow-md w-full">
-            <h3 id="Services" className="text-4xl font-semibold mb-2 text-red-600">{content[language].Our}</h3>
+            <h3 className="text-4xl font-semibold mb-2 text-red-600">{content[language].Our}</h3>
             <p className="text-xl pt-4 text-white">"{content[language].Travel}"</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -205,7 +213,7 @@ const App = () => {
               </div>
             </div>
             <h3 className="text-xl font-semibold mb-2 md:w-4/5">{content[language].High}</h3>
-            <p className="text-gray-600">{content[language].Experience}</p>
+            <p id="Galery" className="text-gray-600">{content[language].Experience}</p>
           </div>
         </div>
       </div>
@@ -217,8 +225,9 @@ const App = () => {
         </div>
       </section>
 
-      <Galery />
-
+      <Galery  />
+<br  id="Question"/>
+      <br /><br />
       <section className='bg-white'>
         <div className="container mx-auto md:flex p-4">
           <div className="md:flex w-full">
@@ -242,11 +251,11 @@ const App = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div><br id="Contact" />
       </section>
 
       {/* <Footer /> */}
-      <footer id="Contact" className="bg-gray-900 text-gray-300 py-10">
+      <footer className="bg-gray-900 text-gray-300 py-10">
       <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
         {/* 1. Brend va ma'lumot */}
         <div>
@@ -257,17 +266,18 @@ const App = () => {
 
           {/* Ijtimoiy tarmoqlar */}
           <div className="flex space-x-4 mt-4">
-            <a href="#" target='_blank' className="hover:text-blue-500 transition">
-              <Facebook size={20} />
+           
+            <a href="https://instagram.com/aqsotour" target='_blank' className="hover:text-purple-400 transition">
+              <Instagram size={25} />
             </a>
-            <a href="https://instagram.com/aqsotour" target='_blank' className="hover:text-pink-300 transition">
-              <Instagram size={20} />
-            </a>
-            <a href="#" target='_blank' className="hover:text-red-500 transition">
-              <Youtube size={20} />
+            <a href="https://youtube.com/@aqsotourtraveling?si=DhMofHV2bvC6nL6K" target='_blank' className="hover:text-red-500 transition">
+              <Youtube size={25} />
             </a>
             <a href="https://t.me/Tour_paket1" target='_blank' className="hover:text-sky-400 transition">
-              <Send size={20} />
+              <Send size={25} />
+            </a>
+            <a href="mailto:aqsotourtraveling">
+              {/* <Gmail/> */}
             </a>
           </div>
         </div>
@@ -288,13 +298,13 @@ const App = () => {
           <h3 className="text-xl font-semibold text-white mb-3">{content[language].Contactus}</h3>
           <ul className="space-y-2 text-gray-400">
             <li className="flex items-center gap-2">
-              <MapPin size={18} /> Andijon, O‘zbekiston
+              <MapPin size={18} /> <a target='_blank' href="http://aqso-tour-visitka.vercel.app"> Andijon, O‘zbekiston</a>
             </li>
             <li className="flex items-center gap-2">
-              <Phone size={18} /> +998 (77) 007-49-09
+              <Phone size={18} /> <a href="tel:+998770074909"></a> +998 (77) 007-49-09
             </li>
             <li className="flex items-center gap-2">
-              <Mail size={18} /> info@aqsotour.uz
+              <Mail size={18} /> <a target='_blank' href="http://aqsotourtraveling@gmail.com">aqsotourtraveling@gmail.com</a>
             </li>
           </ul>
         </div>

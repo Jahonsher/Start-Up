@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import content from './content.json';
 import { Instagram , Send, MapPin, Phone, Mail, Youtube } from "lucide-react";
-import { Analytics } from "@vercel/analytics/react"
-import { Analytics } from "@vercel/analytics/next"
-// import Card from './asistes/Card';
-// import Footer from './asistes/Footer/Footer';
+import { Analytics } from "@vercel/analytics/react";
 import Galery from './asistes/Galery/Galery';
-import AqsoImage from '../public/Aqso.png'
+import AqsoImage from '../public/Aqso.png';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);

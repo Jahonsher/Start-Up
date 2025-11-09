@@ -158,9 +158,8 @@ const App = () => {
             <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour</h1>
             <p className="text-white text-lg mt-14">{content[language].Welcome}</p>
           </div>
-          <div className="w-full md:w-1/5 p-4  mx-auto  rounded-lg mt-8">
-          <img src="../public/Aqso.png" alt="" />
-          </div>
+          <img className="w-full md:w-1/5 p-4  mx-auto  rounded-lg mt-8" src="../public/Aqso.png" alt="Rasim bor edi!" />
+          
         </div>
       </section>
 

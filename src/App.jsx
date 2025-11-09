@@ -1,22 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import content from './content.json';
+import { Facebook, Instagram , Send, MapPin, Phone, Mail, Youtube } from "lucide-react";
 // import Card from './asistes/Card';
-// import Footer from './asistes/Footer/Footer';
+import Footer from './asistes/Footer/Footer';
+import Galery from './asistes/Galery/Galery';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="border rounded-lg mb-2 shadow-md">
+    <div className="border rounded-lg mb-2 shadow-md w-full">
       <button
-        className="w-full text-left p-4 focus:outline-none"
+        className="w-full text-left p-4 focus:outline-none flex justify-between items-center"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="font-semibold">{question}</span>
-        <span className="float-right">{isOpen ? '−' : '+'}</span>
+        <span>{isOpen ? '−' : '+'}</span>
       </button>
       {isOpen && (
-        <div className="p-4 text-gray-600">{answer}</div>
+        <div className="p-4 text-gray-600 text-left">{answer}</div>
       )}
     </div>
   );
@@ -52,22 +54,22 @@ const App = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-6">
               <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
-                {content[language].home}
+                {content[language].Home}
               </a>
               <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
-                {content[language].about}
+                {content[language].About}
               </a>
               <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
-                {content[language].services}
+                {content[language].Services}
               </a>
               <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
-                {content[language].contact}
+                {content[language].Contact}
               </a>
               <a
                 href="#"
                 className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
               >
-                {content[language].login}
+                {content[language].Login}
               </a>
             </div>
             <select
@@ -102,7 +104,7 @@ const App = () => {
         {isMenuOpen && (
           <div
             ref={menuRef}
-            className="md:hidden fixed top-0 right-0 h-screen w-64 bg-black bg-opacity-70 backdrop-blur-md p-4 transform transition-transform ease-in-out duration-300"
+            className="md:hidden fixed top-0 right-0 h-screen w-64 bg-black bg-opacity-70 układ-blur-md p-4 transform transition-transform ease-in-out duration-300"
             style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)' }}
           >
             <button
@@ -126,16 +128,16 @@ const App = () => {
             </button>
             <div className="flex flex-col space-y-4 mt-12">
               <a href="#" className="text-gray-300 hover:text-white">
-                {content[language].home}
+                {content[language].Home}
               </a>
               <a href="#" className="text-gray-300 hover:text-white">
-                {content[language].about}
+                {content[language].About}
               </a>
               <a href="#" className="text-gray-300 hover:text-white">
-                {content[language].services}
+                {content[language].Services}
               </a>
               <a href="#" className="text-gray-300 hover:text-white">
-                {content[language].contact}
+                {content[language].Contact}
               </a>
               <select
                 className="bg-transparent text-white border border-gray-400 rounded p-1 focus:outline-none"
@@ -149,22 +151,24 @@ const App = () => {
           </div>
         )}
       </nav>
-      <div className="p-4">
-        <div className="flex flex-col pt-20 md:flex-row">
+      <section className="container mx-auto md:flex p-4">
+        <div className="md:flex flex-col pt-20 md:flex-row">
           <div className="w-full md:w-3/5 p-4">
-            <h1 className="text-5xl font-bold text-white">{content[language].info}</h1>
+            <h1 className="text-5xl font-bold text-white">{content[language].Info}</h1>
             <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour</h1>
-            <p className="text-white text-lg mt-14">{content[language].welcome}</p>
+            <p className="text-white text-lg mt-14">{content[language].Welcome}</p>
           </div>
-          <div className="w-full md:w-2/5 p-4 bg-gray-300 rounded-lg mt-8"></div>
+          <div className="w-full md:w-1/5 p-4  mx-auto  rounded-lg mt-8">
+          <img src="../public/Aqso.png" alt="" />
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="container mt-24 mb-16 mx-auto px-4 py-8">
+      <div className="container mb-16 mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="p-6 rounded-lg shadow-md w-full ">
+          <div className="p-6 rounded-lg shadow-md w-full">
             <h3 className="text-4xl font-semibold mb-2 text-red-600">{content[language].Our}</h3>
-            <p className="text-xl pt-4 text-white">"{content[language].travel}"</p>
+            <p className="text-xl pt-4 text-white">"{content[language].Travel}"</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="mb-4">
@@ -175,7 +179,7 @@ const App = () => {
               </div>
             </div>
             <h3 className="text-xl font-semibold mb-2">{content[language].Adventure}</h3>
-            <p className="text-gray-600">{content[language].explore}</p>
+            <p className="text-gray-600">{content[language].Explore}</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="mb-4">
@@ -186,7 +190,7 @@ const App = () => {
               </div>
             </div>
             <h3 className="text-xl font-semibold mb-2">{content[language].Plan}</h3>
-            <p className="text-gray-600">{content[language].handle}</p>
+            <p className="text-gray-600">{content[language].Handle}</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="mb-4">
@@ -197,58 +201,108 @@ const App = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-semibold mb-2 md:w-4/5">{content[language].high}</h3>
+            <h3 className="text-xl font-semibold mb-2 md:w-4/5">{content[language].High}</h3>
             <p className="text-gray-600">{content[language].Experience}</p>
           </div>
         </div>
       </div>
 
-      <section className='mb-8'>
+      <section className="mb-8">
         <div className="text-center">
-          <h2 className='text-red-600 text-4xl mb-2'>{content[language].Gallery}</h2>
-          <p className='text-white text-xl'>"{content[language].GalleryInfo}"</p>
+          <h2 className="text-red-600 text-4xl mb-2">{content[language].Gallery}</h2>
+          <p className="text-white text-xl">"{content[language].GalleryInfo}"</p>
         </div>
       </section>
 
-      <section>
-        <div className='text-center'>
-          <h2 className='text-4xl mb-2 text-red-600'>{content[language].Reviews}</h2>
-          <p className='text-white md:text-xl max-w-[500px] mx-auto'>"{content[language].ReviewsInfo}"</p>
+      <Galery />
+
+      <section className='bg-white'>
+        <div className="container mx-auto md:flex p-4">
+          <div className="md:flex w-full">
+            <div className="pr-4 mb-4 md:mb-0 md:w-1/2">
+              <img
+                src="https://trips-travel.vercel.app/assets/experience-iAr2OqVB.png"
+                alt="Travel Image"
+                className="w-full h-auto rounded-lg object-cover"
+              />
+            </div>
+            <div className="md:w-1/2 pl-4">
+              <h1 className="text-4xl font-bold text-red-600 mb-10 text-center">
+                {content[language].Frequently}
+              </h1>
+              <div className="max-w-full">
+                <FAQItem question={content[language].Book} answer={content[language].BookAsk} />
+                <FAQItem question={content[language].Experiences} answer={content[language].ExperiencesAsk} />
+                <FAQItem question={content[language].Suitable} answer={content[language].SuitableAsk} />
+                <FAQItem question={content[language].Customize} answer={content[language].CustomizeAsk} />
+                <FAQItem question={content[language].Safety} answer={content[language].SafetyAsk} />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <div className="bg-white mx-auto p-4 min-h-screen">
-        <div className="md:flex">
-          <div className="md:w-1/2 pr-4 mb-4 md:mb-0">
-            <img src="https://trips-travel.vercel.app/assets/experience-iAr2OqVB.png" alt="Travel Image" className="w-full h-auto rounded-lg object-cover" />
+      {/* <Footer /> */}
+      <footer className="bg-gray-900 text-gray-300 py-10">
+      <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+        {/* 1. Brend va ma'lumot */}
+        <div>
+          <h2 className="text-2xl font-bold text-white mb-3">Aqso Tour</h2>
+          <p className="text-gray-400">
+            {content[language].Introdaction}
+          </p>
+
+          {/* Ijtimoiy tarmoqlar */}
+          <div className="flex space-x-4 mt-4">
+            <a href="#" target='_blank' className="hover:text-blue-500 transition">
+              <Facebook size={20} />
+            </a>
+            <a href="https://instagram.com/aqsotour" target='_blank' className="hover:text-pink-300 transition">
+              <Instagram size={20} />
+            </a>
+            <a href="#" target='_blank' className="hover:text-red-500 transition">
+              <Youtube size={20} />
+            </a>
+            <a href="https://t.me/Tour_paket1" target='_blank' className="hover:text-sky-400 transition">
+              <Send size={20} />
+            </a>
           </div>
-          <div className="md:w-1/2 pl-4">
-            <h1 className="text-2xl font-bold text-red-600 mb-10">{content[language].Frequently}</h1>
-            <FAQItem
-              question={content[language].Book}
-              answer={content[language].BookAsk}
-            /><br />
-            <FAQItem
-              question={content[language].Experiences}
-              answer={content[language].ExperiencesAsk}
-            /><br />
-            <FAQItem
-              question={content[language].Suitable}
-              answer={content[language].SuitableAsk}
-            /><br />
-            <FAQItem
-              question={content[language].Customize}
-              answer={content[language].CustomizeAsk}
-            /><br />
-            <FAQItem
-              question={content[language].Safety}
-              answer={content[language].SafetyAsk}
-            />
-          </div>
+        </div>
+
+        {/* 2. Tezkor havolalar */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-3">{content[language].Quick}</h3>
+          <ul className="space-y-2">
+            <li><a href="#" className="hover:text-white transition">{content[language].Home}</a></li>
+            <li><a href="#" className="hover:text-white transition">{content[language].About}</a></li>
+            <li><a href="#" className="hover:text-white transition">{content[language].Services}</a></li>
+            <li><a href="#" className="hover:text-white transition">{content[language].Contact}</a></li>
+          </ul>
+        </div>
+
+        {/* 3. Biz bilan bog‘laning */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-3">{content[language].Contactus}</h3>
+          <ul className="space-y-2 text-gray-400">
+            <li className="flex items-center gap-2">
+              <MapPin size={18} /> Andijon, O‘zbekiston
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone size={18} /> +998 (77) 007-49-09
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={18} /> info@aqsotour.uz
+            </li>
+          </ul>
         </div>
       </div>
 
-      {/* <Footer /> */}
+      {/* Pastki chiziq */}
+      <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} {content[language].Reserved}
+      </div>
+    </footer>
+ 
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import content from './content.json';
 import { Facebook, Instagram , Send, MapPin, Phone, Mail, Youtube } from "lucide-react";
 // import Card from './asistes/Card';
-import Footer from './asistes/Footer/Footer';
+// import Footer from './asistes/Footer/Footer';
 import Galery from './asistes/Galery/Galery';
 
 const FAQItem = ({ question, answer }) => {
@@ -53,16 +53,16 @@ const App = () => {
           <h1 className="text-4xl font-bold text-red-600">AqsoTour</h1>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
+              <a href="#Home" className="text-white text-xl hover:text-red-600 hidden md:block">
                 {content[language].Home}
               </a>
-              <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
+              <a href="#About" className="text-white text-xl hover:text-red-600 hidden md:block">
                 {content[language].About}
               </a>
-              <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
+              <a href="#Services" className="text-white text-xl hover:text-red-600 hidden md:block">
                 {content[language].Services}
               </a>
-              <a href="#" className="text-white text-xl hover:text-red-600 hidden md:block">
+              <a href="#Contact" className="text-white text-xl hover:text-red-600 hidden md:block">
                 {content[language].Contact}
               </a>
               <a
@@ -127,16 +127,16 @@ const App = () => {
               </svg>
             </button>
             <div className="flex flex-col space-y-4 mt-12">
-              <a href="#" className="text-gray-300 hover:text-white">
+              <a href="#Home" className="text-gray-300 hover:text-white">
                 {content[language].Home}
               </a>
-              <a href="#" className="text-gray-300 hover:text-white">
+              <a href="#About" className="text-gray-300 hover:text-white">
                 {content[language].About}
               </a>
-              <a href="#" className="text-gray-300 hover:text-white">
+              <a href="#Services" className="text-gray-300 hover:text-white">
                 {content[language].Services}
               </a>
-              <a href="#" className="text-gray-300 hover:text-white">
+              <a href="#Contact" className="text-gray-300 hover:text-white">
                 {content[language].Contact}
               </a>
               <select
@@ -151,8 +151,8 @@ const App = () => {
           </div>
         )}
       </nav>
-      <section className="container mx-auto md:flex p-4">
-        <div className="md:flex flex-col pt-20 md:flex-row">
+      <section id="Home" className="container mx-auto md:flex p-4">
+        <div id="About" className="md:flex flex-col pt-20 md:flex-row">
           <div className="w-full md:w-3/5 p-4">
             <h1 className="text-5xl font-bold text-white">{content[language].Info}</h1>
             <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour</h1>
@@ -164,10 +164,10 @@ const App = () => {
         </div>
       </section>
 
-      <div className="container mb-16 mx-auto px-4 py-8">
+      <div id="Services" className="container mb-16 mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="p-6 rounded-lg shadow-md w-full">
-            <h3 className="text-4xl font-semibold mb-2 text-red-600">{content[language].Our}</h3>
+            <h3 id="Services" className="text-4xl font-semibold mb-2 text-red-600">{content[language].Our}</h3>
             <p className="text-xl pt-4 text-white">"{content[language].Travel}"</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -243,7 +243,7 @@ const App = () => {
       </section>
 
       {/* <Footer /> */}
-      <footer className="bg-gray-900 text-gray-300 py-10">
+      <footer id="Contact" className="bg-gray-900 text-gray-300 py-10">
       <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
         {/* 1. Brend va ma'lumot */}
         <div>
@@ -273,10 +273,10 @@ const App = () => {
         <div>
           <h3 className="text-xl font-semibold text-white mb-3">{content[language].Quick}</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white transition">{content[language].Home}</a></li>
-            <li><a href="#" className="hover:text-white transition">{content[language].About}</a></li>
-            <li><a href="#" className="hover:text-white transition">{content[language].Services}</a></li>
-            <li><a href="#" className="hover:text-white transition">{content[language].Contact}</a></li>
+            <li><a href="#Home" className="hover:text-white transition">{content[language].Home}</a></li>
+            <li><a href="#About" className="hover:text-white transition">{content[language].About}</a></li>
+            <li><a href="#Services" className="hover:text-white transition">{content[language].Services}</a></li>
+            <li><a href="#Contact" className="hover:text-white transition">{content[language].Contact}</a></li>
           </ul>
         </div>
 

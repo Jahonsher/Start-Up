@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import content from './content.json';
 import { Instagram , Send, MapPin, Phone, Mail, Youtube } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/next"
 // import Card from './asistes/Card';
 // import Footer from './asistes/Footer/Footer';
 import Galery from './asistes/Galery/Galery';
@@ -158,6 +160,9 @@ const App = () => {
           </div>
         )}
       </nav><br />
+
+        <Analytics />
+
       <section id="Home" className="container mx-auto md:flex p-4">
         <div id="About" className="md:flex flex-col pt-20 md:flex-row">
           <div className="w-full md:w-3/5 p-4">

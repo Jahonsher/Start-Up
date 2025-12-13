@@ -4,6 +4,8 @@ import "./style.css";
 const Login = () => {
   return (
     <>
+    <div class="central-container">
+
       <div class="form-container">
         <h1 class="title">LOGIN</h1>
         <form class="form">
@@ -31,6 +33,7 @@ const Login = () => {
             </p>
         </form>
 </div>
+    </div>
     </>
   )
 }

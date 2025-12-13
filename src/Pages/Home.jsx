@@ -3,7 +3,6 @@ import content from './content.json';
 import { Instagram , Send, MapPin, Phone, Mail, Youtube } from "lucide-react";
 import { Analytics } from "@vercel/analytics/react";
 import { Link } from 'react-router-dom';
-import Login from './Login/Login';
 import Galery from '../asistes/Galery/Galery';
 
 const FAQItem = ({ question, answer }) => {

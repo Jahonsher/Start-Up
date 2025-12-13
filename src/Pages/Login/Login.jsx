@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import "./style.css";
 
 const Login = () => {
@@ -17,7 +19,9 @@ const Login = () => {
                 <label for="password" class="password">Password</label>
                 <input type="password" name="password" required />
             </div>
-            <button class="sign-in">Sign in</button>
+            <Link class="sign-in" to="/General">Sign in</Link>
+            
+            {/* <button class="sign-in">Sign in</button> */}
             <div class="social-messages">
                 <div class="line"></div>
                 <p class="message">Login with social accounts</p>

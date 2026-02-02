@@ -72,7 +72,7 @@ export default function General() {
 
       {/* FOOTER */}
       <div id="contact">
-        <Footer />
+        <Footer t={t} />
       </div>
     </div>
   );

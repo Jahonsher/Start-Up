@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function TourModal({ tour, onClose }) {
   const [index, setIndex] = useState(0);
@@ -44,6 +44,18 @@ export default function TourModal({ tour, onClose }) {
     startX.current = null;
   };
 
+  // keyboard navigation (Escape to close, arrows to navigate)
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    };
+
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose, next, prev]);
+
   return (
     <div
       onClick={onClose}
@@ -65,11 +77,28 @@ export default function TourModal({ tour, onClose }) {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
+          {/* Prev / Next buttons */}
+          <button
+            onClick={prev}
+            aria-label="Previous image"
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full z-10"
+          >
+            ‹
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next image"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full z-10"
+          >
+            ›
+          </button>
           <img
             src={tour.images[index]}
             alt=""
             className="h-56 w-full object-cover select-none"
             draggable={false}
+            loading="lazy"
+            decoding="async"
           />
 
           {/* DOTS */}
@@ -81,6 +110,28 @@ export default function TourModal({ tour, onClose }) {
                   i === index ? "bg-sky-400" : "bg-white/40"
                 }`}
               />
+            ))}
+          </div>
+
+          {/* THUMBNAILS */}
+          <div className="mt-3 flex items-center gap-2 overflow-x-auto">
+            {(tour.images || []).map((src, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`flex-none rounded-md overflow-hidden border-2 ${
+                  i === index ? "border-sky-400" : "border-transparent"
+                }`}
+                aria-label={`Show image ${i + 1}`}
+              >
+                <img
+                  src={src}
+                  alt={`thumbnail-${i}`}
+                  className="h-16 w-24 object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             ))}
           </div>
         </div>

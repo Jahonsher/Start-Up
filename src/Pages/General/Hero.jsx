@@ -2,7 +2,7 @@ export default function Hero({ t }) {
   return (
     <section className="relative h-[65vh] flex items-center">
       <img
-        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+        src="/Hero.jpeg"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/60" />

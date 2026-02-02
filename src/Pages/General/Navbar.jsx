@@ -16,7 +16,7 @@ export default function Navbar({ lang, setLang, t }) {
             onClick={() => scrollTo("tours")}
             src="/AqsoLogo.png"
             alt="AqsoTour Logo"
-            class="h-14 w-auto cursor-pointer
+            className="h-14 w-auto cursor-pointer
            transition-all duration-300
            hover:scale-105 hover:opacity-90
            drop-shadow-md"

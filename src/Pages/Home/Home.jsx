@@ -54,7 +54,7 @@ const Home = () => {
           <img
             src="/AqsoLogo.png"
             alt="AqsoTour Logo"
-            class="h-14 w-auto cursor-pointer
+            className="h-14 w-auto cursor-pointer
            transition-all duration-300
            hover:scale-105 hover:opacity-90
            drop-shadow-md"
@@ -154,10 +154,12 @@ const Home = () => {
             <h1 className="text-6xl pt-4 font-bold text-red-600">AqsoTour</h1>
             <p className="text-white text-lg mt-14">{content[language].Welcome}</p>
           </div>
-          <img 
-            className="w-full md:w-1/5 p-4 mx-auto rounded-lg mt-8" 
-            src="/Aqso.png" 
-            alt="Al-Aqso masjidi" 
+          <img
+            className="w-full md:w-1/5 p-4 mx-auto rounded-lg mt-8"
+            src="/Aqso.png"
+            alt="Al-Aqso masjidi"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
@@ -255,7 +257,7 @@ const Home = () => {
           <img
             src="/AqsoLogo.png"
             alt="AqsoTour Logo"
-            class="h-14 w-auto cursor-pointer
+            className="h-14 w-auto cursor-pointer
            transition-all duration-300
            hover:scale-105 hover:opacity-90
            drop-shadow-md"

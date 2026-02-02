@@ -12,18 +12,34 @@ export default function TourModal({ tour, onClose }) {
       prev === 0 ? tour.images.length - 1 : prev - 1
     );
 
-  // 🖱️📱 UNIVERSAL SWIPE (mouse + touch)
-  const handlePointerDown = (e) => {
+  // 🖱️ MOUSE (PC / noutbuk)
+  const handleMouseDown = (e) => {
     startX.current = e.clientX;
   };
 
-  const handlePointerUp = (e) => {
+  const handleMouseUp = (e) => {
     if (startX.current === null) return;
 
     const diff = startX.current - e.clientX;
+    if (diff > 50) next();
+    if (diff < -50) prev();
 
-    if (diff > 50) next();      // chapga surildi
-    if (diff < -50) prev();    // o‘ngga surildi
+    startX.current = null;
+  };
+
+  // 📱 TOUCH (telefon)
+  const handleTouchStart = (e) => {
+    startX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (startX.current === null) return;
+
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX.current - endX;
+
+    if (diff > 50) next();
+    if (diff < -50) prev();
 
     startX.current = null;
   };
@@ -34,7 +50,7 @@ export default function TourModal({ tour, onClose }) {
       className="fixed inset-0 z-50 flex items-center justify-center px-4
                  bg-black/40 backdrop-blur-xl"
     >
-      {/* MODAL CONTENT */}
+      {/* MODAL */}
       <div
         onClick={(e) => e.stopPropagation()}
         className="bg-white/10 backdrop-blur-2xl
@@ -43,12 +59,15 @@ export default function TourModal({ tour, onClose }) {
       >
         {/* SLIDER */}
         <div
-          className="relative overflow-hidden rounded-xl"
-          onPointerDown={handlePointerDown}
-          onPointerUp={handlePointerUp}
+          className="relative overflow-hidden rounded-xl touch-pan-y"
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <img
             src={tour.images[index]}
+            alt=""
             className="h-56 w-full object-cover select-none"
             draggable={false}
           />
@@ -68,7 +87,9 @@ export default function TourModal({ tour, onClose }) {
 
         <h2 className="text-2xl font-bold mt-4">{tour.title}</h2>
         <p className="text-white/70 mt-2">{tour.description}</p>
-        <p className="text-white/70 mt-2 whitespace-pre-line">{tour.descriptions}</p>
+        <p className="text-white/70 mt-2 whitespace-pre-line">
+          {tour.descriptions}
+        </p>
         <p className="mt-3 font-bold text-sky-400">{tour.price}</p>
 
         <button

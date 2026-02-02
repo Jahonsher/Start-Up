@@ -1,3 +1,5 @@
+// import LogoNav from '/Aqsologo';
+
 export default function Navbar({ lang, setLang, t }) {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -5,23 +7,27 @@ export default function Navbar({ lang, setLang, t }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[rgb(21,21,73)] border-b border-white/10">
+    <header className="bg-black bg-opacity-5 backdrop-blur-md fixed w-full top-0 z-10 p-4 text-white">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* LOGO */}
-        <div
-          onClick={() => scrollTo("tours")}
-          className="text-2xl font-bold cursor-pointer"
-        >
-          Aqso<span className="text-sky-400">Tour</span>
-        </div>
+
+        <img
+            onClick={() => scrollTo("tours")}
+            src="/AqsoLogo.png"
+            alt="AqsoTour Logo"
+            class="h-14 w-auto cursor-pointer
+           transition-all duration-300
+           hover:scale-105 hover:opacity-90
+           drop-shadow-md"
+          />
 
         {/* MENU */}
         <nav className="hidden md:flex gap-8 text-sm text-white/70">
-          <button onClick={() => scrollTo("tours")}>{t.menu.tours}</button>
-          <button onClick={() => scrollTo("tours")}>{t.menu.umra}</button>
-          <button onClick={() => scrollTo("tours")}>{t.menu.promo}</button>
-          <button onClick={() => scrollTo("contact")}>{t.menu.contact}</button>
+          <button className="text-white text-xl hover:text-red-600 hidden md:block" onClick={() => scrollTo("tours")}>{t.menu.tours}</button>
+          <button className="text-white text-xl hover:text-red-600 hidden md:block" onClick={() => scrollTo("tours")}>{t.menu.umra}</button>
+          <button className="text-white text-xl hover:text-red-600 hidden md:block" onClick={() => scrollTo("tours")}>{t.menu.promo}</button>
+          <button className="text-white text-xl hover:text-red-600 hidden md:block" onClick={() => scrollTo("contact")}>{t.menu.contact}</button>
         </nav>
 
         {/* LANGUAGE */}

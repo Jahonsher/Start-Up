@@ -51,7 +51,14 @@ const Home = () => {
     <div className="min-h-screen bg-[rgb(21,21,73)]">
       <nav className="bg-black bg-opacity-5 backdrop-blur-md fixed w-full top-0 z-10 p-8 text-white">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-4xl font-bold text-red-600">AqsoTour</h1>
+          <img
+            src="/AqsoLogo.png"
+            alt="AqsoTour Logo"
+            class="h-14 w-auto cursor-pointer
+           transition-all duration-300
+           hover:scale-105 hover:opacity-90
+           drop-shadow-md"
+          />
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-6">
               <a href="#Home" className="text-white text-xl hover:text-red-600 hidden md:block">
@@ -245,8 +252,15 @@ const Home = () => {
       <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
         {/* 1. Brend va ma'lumot */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-3">Aqso Tour</h2>
-          <p className="text-gray-400">
+          <img
+            src="/AqsoLogo.png"
+            alt="AqsoTour Logo"
+            class="h-14 w-auto cursor-pointer
+           transition-all duration-300
+           hover:scale-105 hover:opacity-90
+           drop-shadow-md"
+          />
+          <p className="text-gray-400 pt-6">
             {content[language].Introdaction}
           </p>
 

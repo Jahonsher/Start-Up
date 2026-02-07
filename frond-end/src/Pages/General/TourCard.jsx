@@ -1,0 +1,37 @@
+import React, { useCallback } from "react";
+
+function TourCard({ tour, onSelect }) {
+  const handleClick = useCallback(() => onSelect?.(tour), [onSelect, tour]);
+
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.key === "Enter" || e.key === " ") handleClick();
+    },
+    [handleClick]
+  );
+
+  return (
+    <div
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      className="bg-[#0f163d] rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition"
+    >
+      <img
+        src={tour.images[0]}
+        alt={tour.title || "tour image"}
+        loading="lazy"
+        decoding="async"
+        className="h-48 w-full object-cover"
+      />
+      <div className="p-5">
+        <h3 className="text-lg font-semibold">{tour.title}</h3>
+        <p className="text-sm text-white/60 mt-2">{tour.description}</p>
+        <div className="mt-3 font-bold text-sky-400">{tour.price}</div>
+      </div>
+    </div>
+  );
+}
+
+export default React.memo(TourCard);
